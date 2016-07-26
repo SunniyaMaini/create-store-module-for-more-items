@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="gemstore">
+<head>
+<title>Store Module</title>
+<style>
+* {
+	box-sizing: border-box;	
+}
+.list {
+	border: 1px solid #ccc;
+	width: 400px;
+	padding: 5px;	
+	margin: 5px;
+}
+.pull-right {
+	float: right;	
+}
+</style>
+
+</head>
+<body>
+<h1>Creating a Store Module for more than 1 item with Angular JS</h1>
+<p>We will use ng-repeat directive, array and objects</p>
+<div ng-controller="StoreController as store">
+	<div class="list" ng-repeat="product in store.products">
+        <h2>{{product.name}} <em class="pull-right">$ {{product.price}}</em></h2>
+        <p>{{product.description}}</p>
+        <button ng-show="product.canPurchase">Add to Cart </button>
+    </div>
+</div>
+
+
+
+
+<script src="angular.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
